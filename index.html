@@ -1,23 +1,311 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Markdown Extractor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Markdown Extractor | Convert Web Pages to Markdown for AI</title>
+
+  <meta name="description"
+    content="AI Markdown Extractor is a Chrome extension that converts web pages into clean Markdown for better AI and GPT responses." />
+  <meta name="author" content="Aryan Kyatham" />
+  <meta name="keywords" content="
+    AI Markdown Extractor, markdown extractor, html to markdown, html to markdown converter,
+    markdown converter, markdown generator, markdown for AI, AI markdown tool, AI content extractor,
+    chrome extension, chrome extension for markdown, chrome markdown tool, chrome AI extension,
+    GPT tools, GPT markdown, chatgpt markdown, chatgpt input formatter, AI productivity,
+    AI tools, LLM tools, LLM input formatter, LLM markdown, large language model tools,
+    webpage to markdown, website to markdown, docs to markdown, documentation extractor,
+    developer tools, developer productivity, dev tools chrome, coding documentation,
+    copy website content, clean copy paste, markdown cleaner, markdown formatter,
+    AI prompt helper, AI prompt preparation, prompt engineering tools,
+    open in GPT, open in chatgpt, send to GPT, AI workflow, AI assistant tools,
+    content extraction, web content extractor, text extractor, html parser,
+    markdown preview, markdown editor, markdown copy tool, markdown download,
+    AI coding assistant, AI developer tools, frontend tools, web developer tools,
+    software documentation, API documentation, tech blog markdown,
+    tutorial markdown, clean markdown output, readable markdown,
+    AI ready markdown, markdown for chatgpt, markdown for claude,
+    markdown for gemini, markdown for copilot, AI prompt formatting,
+    chrome productivity extension, browser productivity, browser tools,
+    AI research tools, AI learning tools, study tools for AI,
+    note taking markdown, markdown notes, knowledge base markdown,
+    documentation workflow, AI documentation workflow,
+    html scraping, webpage scraping markdown,
+    AI summarization input, AI context builder,
+    markdown export, markdown import,
+    AI assistant chrome extension, browser AI tools,
+    one click markdown, fast markdown conversion,
+    AI friendly format, machine readable markdown,
+    content reuse tools, content repurposing,
+    AI content tools, AI automation tools,
+    knowledge extraction, information extraction,
+    clean text extraction, structured text output,
+    markdown structure, headings markdown, code block markdown,
+    syntax highlighting markdown, developer notes markdown,
+    programming docs markdown, stackoverflow markdown,
+    github markdown, README markdown helper,
+    open source tools, open source chrome extension,
+    AI open source tools, markdown open source,
+    privacy friendly extension, no tracking extension,
+    lightweight chrome extension, fast chrome extension,
+    modern web tools, productivity hacks,
+    AI workflow optimization, AI efficiency tools,
+    learning faster with AI, studying with AI,
+    research assistant tools, academic markdown,
+    technical writing tools, technical documentation,
+    developer writing tools, markdown writing,
+    markdown blogging, markdown publishing,
+    AI content preparation, AI ready text,
+    HTML cleanup tool, HTML cleaner,
+    webpage cleaner, remove clutter content,
+    extract article content, extract blog content,
+    copy blog to markdown, copy docs to markdown,
+    AI question answering tools, better AI answers,
+    accurate AI responses, context aware AI,
+    AI context tools, AI input enhancer,
+    prompt context builder, markdown context,
+    developer chrome plugins, browser extensions for devs,
+    AI dev tools chrome, web dev extensions,
+    frontend productivity tools, backend documentation tools,
+    software engineering tools, programming productivity,
+    coding helper tools, learning programming tools,
+    AI study helper, AI learning assistant,
+    markdown conversion extension, markdown export tool,
+    webpage markdown export, website markdown export,
+    AI writing support, AI reading tools,
+    long article markdown, clean article markdown,
+    AI search enhancement, AI knowledge tools,
+    LLM preparation tools, LLM productivity tools,
+    AI workflow tools chrome, browser based AI tools" 
+  />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#1f1299', // Your specific color
+              light: '#3222c7',
+              dark: '#150c6b',
+              50: '#eef2ff', // Very light blue for backgrounds
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #c7c7c7;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1f1299;
+    }
+  </style>
 </head>
-<body>
-  <h1>🤖 AI Markdown Extractor</h1>
-  <p>Extracts markdown from web pages for better AI responses.<br>
-  Easily copy website content into Markdown and open it in GPT for better, more accurate results.</p>
 
-  <h2>✨ Features</h2>
-  <ul>
-    <li>🪄 <strong>One-Click Conversion</strong> — Turn any webpage or selected text into Markdown instantly.</li>
-    <li>💬 <strong>Open in GPT</strong> — Send your Markdown directly to GPT for context-aware responses.</li>
-    <li>📝 <strong>Preview & Edit</strong> — Review and fine-tune your Markdown before using it.</li>
-    <li>📦 <strong>Copy or Download</strong> — Save or share the formatted Markdown easily.</li>
-  </ul>
+<body class="font-sans antialiased text-slate-800 bg-white">
 
-  <p> Contact me: <a href="https://www.linkedin.com/in/aryankyatham/" target="_blank">LinkedIn</a> | <a href="/privacy.html" target="_blank">Privacy page</a></p>
+  <nav class="fixed w-full z-50 top-0 start-0 border-b border-gray-200 bg-white/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse">
+        <div class="w-8 h-8 bg-brand text-white rounded-lg flex items-center justify-center">
+          <image src="./icons/icon128.png" alt="Markdown Extractor Logo" class="w-5 h-5" />
+        </div>
+        <span class="self-center text-xl font-bold whitespace-nowrap text-brand-dark hidden md:block">Markdown
+          Extractor</span>
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <a href="https://chromewebstore.google.com/detail/mcjinkonknmbihigeboaahgialhhibmm" target="_blank"
+          class="text-white bg-brand hover:bg-brand-light focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center transition-all shadow-lg shadow-brand/20">
+          <i class="fa-brands fa-chrome mr-2"></i> Add to Chrome
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-brand-50 to-white">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+
+      <div class="text-center lg:text-left">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-brand text-sm font-semibold mb-6 border border-blue-200">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>Supercharge your AI Workflow</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-slate-900">
+          Convert Web Pages to <span class="text-brand">Markdown</span> instantly.
+        </h1>
+
+        <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          Stop copy-pasting messy text. Extract clean, formatted Markdown from any website to get faster, more accurate
+          context for <strong>ChatGPT, Claude, and Gemini</strong>.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="https://chromewebstore.google.com/detail/mcjinkonknmbihigeboaahgialhhibmm" target="_blank"
+            class="bg-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-light transition shadow-xl shadow-brand/25 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+            <i class="fa-brands fa-chrome text-xl"></i> Install Extension
+          </a>
+
+          <a href="#features"
+            class="bg-white text-slate-700 border border-slate-300 px-8 py-4 rounded-xl font-semibold hover:bg-slate-50 hover:text-brand hover:border-brand transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-info"></i> How it Works
+          </a>
+        </div>
+      </div>
+
+      <div class="relative w-full group">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-brand to-blue-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200">
+        </div>
+
+        <div class="relative bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden">
+          <div class="bg-gray-100 px-4 py-3 border-b border-gray-200 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            <div class="ml-4 bg-white px-3 py-1 rounded text-xs text-gray-400 flex-1 text-center font-mono">
+              markdown-extractor.com</div>
+          </div>
+
+          <video src="demo-video.mp4" poster="https://placehold.co/600x400/f3f4f6/1f1299?text=Demo+Video+Preview"
+            controls autoplay muted loop class="w-full h-auto aspect-video object-cover"></video>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="features" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-brand font-bold tracking-wide uppercase text-sm mb-2">Capabilities</h2>
+        <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Why use Markdown Extractor?</h3>
+        <p class="mt-4 text-slate-600 max-w-2xl mx-auto">Enhance your LLM prompting workflow by feeding clean data into
+          your AI tools.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div
+          class="group p-8 rounded-2xl bg-white border border-slate-100 shadow-lg hover:shadow-xl hover:border-brand/20 transition duration-300">
+          <div
+            class="w-12 h-12 bg-brand/10 text-brand rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 text-slate-800">One-Click Convert</h4>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Instantly turn any webpage article or documentation into clean, structured Markdown.
+          </p>
+        </div>
+
+        <div
+          class="group p-8 rounded-2xl bg-white border border-slate-100 shadow-lg hover:shadow-xl hover:border-brand/20 transition duration-300">
+          <div
+            class="w-12 h-12 bg-brand/10 text-brand rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 text-slate-800">Open in GPT</h4>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Send your extracted content directly to ChatGPT with a custom prompt automatically attached.
+          </p>
+        </div>
+
+        <div
+          class="group p-8 rounded-2xl bg-white border border-slate-100 shadow-lg hover:shadow-xl hover:border-brand/20 transition duration-300">
+          <div
+            class="w-12 h-12 bg-brand/10 text-brand rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 text-slate-800">Live Preview</h4>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Review and edit the markdown before copying. Ensure only the content you want is captured.
+          </p>
+        </div>
+
+        <div
+          class="group p-8 rounded-2xl bg-white border border-slate-100 shadow-lg hover:shadow-xl hover:border-brand/20 transition duration-300">
+          <div
+            class="w-12 h-12 bg-brand/10 text-brand rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+            <i class="fa-regular fa-copy"></i>
+          </div>
+          <h4 class="text-xl font-bold mb-3 text-slate-800">Copy & Share</h4>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            One tap to copy to clipboard or download as a .md file for your Notion or Obsidian notes.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand text-white py-16">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold mb-6">Ready to improve your AI prompts?</h2>
+      <p class="text-blue-100 text-lg mb-8">Join thousands of users converting web content to Markdown for better
+        productivity.</p>
+      <a href="https://chromewebstore.google.com/detail/mcjinkonknmbihigeboaahgialhhibmm" target="_blank"
+        class="bg-white text-brand px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-flex items-center gap-2">
+        <i class="fa-brands fa-chrome"></i> Add to Chrome — It's Free
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+      <div class="mb-6 md:mb-0 text-center md:text-left">
+        <span class="text-xl font-bold text-white block mb-2">AI Markdown Extractor</span>
+        <p class="text-sm text-slate-500">Built with <i class="fa-solid fa-heart text-indigo-500"></i> by Aryan Kyatham
+        </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6 text-sm font-medium">
+        <a href="https://www.linkedin.com/in/aryankyatham/" target="_blank"
+          class="hover:text-white transition flex items-center gap-2">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="/privacy.html" target="_blank" class="hover:text-white transition flex items-center gap-2">
+          <i class="fa-solid fa-shield-halved"></i> Privacy Policy
+        </a>
+        <a href="mailto:kyathamaryan@gmail.com" class="hover:text-white transition flex items-center gap-2">
+          <i class="fa-regular fa-envelope"></i> Mail
+        </a>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-xs text-slate-600">
+      &copy; 2025 AI Markdown Extractor. All rights reserved.
+    </div>
+  </footer>
+
 </body>
+
 </html>
